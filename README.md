@@ -1,4 +1,4 @@
-# Projeto-Aplicado-I
+# Análise de Dados: População e Demografia
 
 ## Objetivo
 Este projeto vai nos ajudar a analisar os dados de população e demografia, para entender os fatores que influenciam o crescimento populacional em diferentes regiões do mundo. Ultizaremos algumas técnicas de análise de dados,para descobrir como natalidade, mortalidade e migração impactam o crescimento populacional.
