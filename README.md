@@ -1,7 +1,7 @@
 # Projeto-Aplicado-I
 
 ## Objetivo
-Este projeto vai nos ajudar a analisar os dados de população e demografia,para entender os fatores que influenciam o crescimento populacional em diferentes regiões do mundo. Ultizaremos algumas técnicas de análise de dados,para descobrir como natalidade, mortalidade e migração impactam o crescimento populacional.
+Este projeto vai nos ajudar a analisar os dados de população e demografia, para entender os fatores que influenciam o crescimento populacional em diferentes regiões do mundo. Ultizaremos algumas técnicas de análise de dados,para descobrir como natalidade, mortalidade e migração impactam o crescimento populacional.
 
 ## Estrutura do Repositório
 - `Capa/`: Contém os dados pessoais (Nome, RA) dos integrantes do grupo.
