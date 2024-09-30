@@ -39,14 +39,17 @@ plt.title('Distribuição da Taxa de Crescimento Populacional')
 plt.xlabel('Taxa de Crescimento')
 plt.ylabel('Frequência')
 plt.show()
+
 # Histograma da Densidade Populacional
 sns.histplot(df['density (km²)'], bins=20, kde=True)
 plt.title('Distribuição da Densidade Populacional')
 plt.xlabel('Densidade Populacional (por km²)')
 plt.ylabel('Frequência')
 plt.show()
+
 # Selecionar algumas colunas para comparar as populações de diferentes anos
 df[['country', '2023 population', '2022 population', '2020 population', '2015 population']].head()
+
 # Criar uma nova coluna para o crescimento populacional de 2020 a 2023
 df['growth 2020-2023'] = ((df['2023 population'] - df['2020 population']) / df['2020 population']) * 100
 
@@ -56,6 +59,7 @@ plt.title('Crescimento Populacional de 2020 a 2023 (%)')
 plt.xlabel('Crescimento (%)')
 plt.ylabel('Frequência')
 plt.show()
+
 # Remover o símbolo de porcentagem e converter para float
 df['growth rate'] = df['growth rate'].str.replace('%', '').astype(float)
 
@@ -67,8 +71,27 @@ df['2020 population'] = pd.to_numeric(df['2020 population'], errors='coerce')
 # Agora calcular a matriz de correlação
 correlacao = df[['growth rate', 'density (km²)', '2023 population', '2020 population']].corr()
 
-# Visualizar a matriz de correlação
+# Boxplot para verificar outliers na Taxa de Crescimento Populacional
+plt.figure(figsize=(10,6))
+sns.boxplot(y='growth rate', data=df)
+plt.title('Boxplot da Taxa de Crescimento Populacional')
+plt.show()
+# Matriz de correlação entre variáveis numéricas
+correlacao = df[['growth rate', 'density (km²)', '2023 population', '2020 population']].corr()
+
+# Visualizar o heatmap da correlação
 plt.figure(figsize=(8,6))
 sns.heatmap(correlacao, annot=True, cmap='coolwarm', linewidths=0.5)
 plt.title('Matriz de Correlação entre Variáveis Populacionais')
+plt.show()
+# Boxplot para verificar outliers na Taxa de Crescimento Populacional
+plt.figure(figsize=(10,6))
+sns.boxplot(y='growth rate', data=df) 
+plt.title('Boxplot da Taxa de Crescimento Populacional')
+plt.show()
+
+# Boxplot para verificar outliers na Densidade Populacional
+plt.figure(figsize=(10,6))
+sns.boxplot(y='density (km²)', data=df)  
+plt.title('Boxplot da Densidade Populacional')
 plt.show()
